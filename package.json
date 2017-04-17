@@ -1,0 +1,34 @@
+{
+  "name": "nqueens-refactor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/classnames": "^0.0.32",
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.12",
+    "@types/react": "^15.0.21",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.38",
+    "classnames": "^2.2.5",
+    "npm-run-all": "^4.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "reselect": "^3.0.0",
+    "semantic-ui-react": "^0.67.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "react-scripts-ts": "1.2.0"
+  },
+  "scripts": {
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts-ts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  }
+}

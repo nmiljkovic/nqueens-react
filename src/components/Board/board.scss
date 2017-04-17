@@ -1,0 +1,81 @@
+@import "../../variables";
+
+.board {
+  display: block;
+
+  .board-focus-row {
+    display: flex;
+
+    .board-focus-square {
+      flex-grow: 1;
+      height: 20px;
+      border: 1px solid #ddd;
+      border-right: 0;
+
+      &:last-child {
+        border-right: 1px solid #ddd;
+      }
+
+      &.focused {
+        background-color: $focused-column-bg-color;
+      }
+    }
+  }
+
+  .board-row {
+    display: flex;
+
+    &:last-child .board-square {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .board-square {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    flex: 1 0 0;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: grey;
+
+    &:before {
+      content: '';
+      float: left;
+      padding-top: 100%;
+    }
+
+    &:last-child {
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  &.fade-squares .board-square {
+    transition: background-color 0.2s ease;
+  }
+
+  &.show-unsafe-squares .board-square.unsafe:not(.queen):not(.visited) {
+    background-color: $unsafe-bg-color;
+  }
+
+  &.show-visited-squares .board-square.visited {
+    background-color: $visited-bg-color;
+    color: transparent;
+  }
+
+  .board-square.queen {
+    color: transparent;
+    background: transparent url('queen.png') no-repeat center;
+    background-size: 90%;
+  }
+
+  &.editing .board-square:not(.unsafe):hover,
+  .board-square.queen.user-placed {
+    background-color: $user-placed-bg-color;
+    cursor: pointer;
+  }
+}

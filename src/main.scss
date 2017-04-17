@@ -1,0 +1,28 @@
+@import "./_variables.scss";
+
+body {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+.legend {
+  .unsafe {
+    background-color: $unsafe-bg-color !important;
+  }
+  .visited {
+    background-color: $visited-bg-color !important;
+  }
+  .user-placed {
+    background-color: $user-placed-bg-color !important;
+  }
+  .focused-column {
+    background-color: $focused-column-bg-color !important;
+  }
+}
+
+.ui.progress {
+  margin-bottom: 0 !important;
+  .bar {
+    min-width: 0 !important;
+  }
+}
